@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 
+import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'methodical-add-employee',
@@ -9,14 +11,19 @@ import { Employee } from '../employee';
 })
 export class AddEmployeeComponent implements OnInit {
   employee: Employee;
+  data: DataService;
 
-  constructor() { }
+  constructor(dataService: DataService) { 
+    this.employee = new Employee;
+    this.data = dataService;
+
+  }
 
   ngOnInit() {
   }
 
   onSubmitEmployee(employee: Employee){
-
+    this.data.addEmployee(employee);
   }
 
 }

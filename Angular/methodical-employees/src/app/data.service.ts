@@ -19,6 +19,7 @@ export class DataService {
     // bank_account varchar(37) not null,
     // salary int Not null default 13000,
     const body = {
+      id: 1,
       forename: emp.forename,
       surname: emp.surname,
       street_number: emp.street_number,
@@ -32,6 +33,7 @@ export class DataService {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
 
-    return this.http.post("/api/new_employee", body, options).subscribe();
+    // return this.http.post("/api/new_employee", body, options).subscribe();
+    return this.http.post("/api/new_employee/", body, options).subscribe();
   }
 }
