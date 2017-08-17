@@ -2,6 +2,13 @@ const express = require('express');
 const app = express();
 const db = require('./db.js');
 
+app.post('/new_employee', function (req, res) {
+    console.log('Adding new employee.');
+    db.getEmployeesInDepartment(req.body, function (rows){
+        res.send(rows);
+    });
+});
+
 app.get('/employees/dept', function (req, res) {
     console.log('Getting list of employees by dept.');
     db.getEmployeesInDepartment(req.body.id, function (rows){
