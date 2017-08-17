@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(http: HttpClient) { this.http = http;}
 
-  listEmployeesInDepartment(emp: Employee): void{ 
+  addEmployee(emp: Employee): void{ 
     // surname_name varchar(50) NOT NULL,
     // street_number varchar (5) not null,
     // street_name varchar (50) not null,
