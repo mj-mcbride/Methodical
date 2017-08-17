@@ -14,13 +14,18 @@ export class ViewEmployeesDeptComponent implements OnInit {
 
   constructor(dataService: DataService) { 
     this.data = dataService;
-    this.employees = this.data.getEmployees();
+    this.employees = this.data.getEmployeesByDepartment(1);
     console.log(this.employees);
     
   }
 
   ngOnInit() {
     
+  }
+
+  onSearchDept(){
+    var deptId = (<HTMLInputElement>document.getElementById('txtDept')).value;
+    this.employees = this.data.getEmployeesByDepartment(+deptId);
   }
 
 }

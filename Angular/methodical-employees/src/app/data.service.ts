@@ -42,11 +42,13 @@ export class DataService {
   }
 
 
-  getEmployees(): Employee[]{ 
+  getEmployeesByDepartment(id: number): Employee[]{ 
 
     console.log("Called method");
-    
+    const body = {
+      deptID: id
+    }
 
-    return this.http.get('/api/employees/dept');
+    return this.http.get('/api/employees/dept', body);
   }
 }
