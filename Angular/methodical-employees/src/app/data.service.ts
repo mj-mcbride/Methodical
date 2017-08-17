@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Employee } from './employee.js';
 
+import { SalesEmployee } from './sales-employee';
+
 
 @Injectable()
 export class DataService {
@@ -41,14 +43,39 @@ export class DataService {
     return this.http.post("/api/new_employee/", body, options).subscribe();
   }
 
+  addSalesEmployee(emp: SalesEmployee): void{ 
+    const body = {
+      forename: emp.forename,
+      surname: emp.surname,
+      street_number: emp.street_number,
+      street_name: emp.street_name,
+      city: emp.city,
+      NIN: emp.NIN,
+      bank_account: emp.bank_account,
+      salary: emp.salary,
+      commission: emp.commission
+    };
+    console.log(body.forename);
+    const options = {
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    };
+
+    // return this.http.post("/api/new_employee", body, options).subscribe();
+    return this.http.post("/api/new_sales_employee/", body, options).subscribe();
+  }
+
 
   getEmployeesByDepartment(id: number): Employee[]{ 
 
-    console.log("Called method");
+    console.log("Called method" + id);
     const body = {
       deptID: id
     }
 
-    return this.http.get('/api/employees/dept', body);
+    const options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+  };
+  console.log(body.deptID);
+    return this.http.post('/api/employees/dept', body, options);
   }
 }
