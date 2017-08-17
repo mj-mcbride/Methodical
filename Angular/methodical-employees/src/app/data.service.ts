@@ -36,4 +36,22 @@ export class DataService {
     // return this.http.post("/api/new_employee", body, options).subscribe();
     return this.http.post("/api/new_employee/", body, options).subscribe();
   }
+
+  getEmployees(): void{ 
+    // surname_name varchar(50) NOT NULL,
+    // street_number varchar (5) not null,
+    // street_name varchar (50) not null,
+    // city varchar (20) not null,
+    // NIN char(9) not null, 
+    // bank_account varchar(37) not null,
+    // salary int Not null default 13000,
+    const body = {
+      deptName: 'emp.forename'
+    };
+    const options = {
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    };
+
+    return this.http.post("/api/employees/dept", body, options).subscribe();
+  }
 }
