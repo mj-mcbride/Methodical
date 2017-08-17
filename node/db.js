@@ -14,10 +14,20 @@ db.connect( function (err) {
 
 exports.getEmployeesInDepartment = function (deptName, callback){
     db.query(
-        "SELECT * FROM US2 WHERE `Department Name` = ?",
+        "SELECT * FROM US2 WHERE `Department Name` = ?;",
         [deptName],
         function (err, rows) {
             if (err) throw err;
             callback(rows);
         });
-}
+};
+
+exports.addEmployee = function (emp, callback){
+    db.query(
+        "INSERT INTO Employee (forename, surname, street_number, street_name, city, NIN, bank_account, salary) VALUES (?, ?, ?, ?, ?, ?, ?, ?);",
+        [emp.forename, emp.surname, emp.street_number, emp.street_name, emp.city, emp.NIN, emp.bank_account, emp.salary],
+        function (err, rows) {
+            if(err) throw err;
+            callback ('success');
+        });
+};
