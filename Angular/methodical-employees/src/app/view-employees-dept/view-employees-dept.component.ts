@@ -10,12 +10,16 @@ import { DataService } from '../data.service';
 })
 export class ViewEmployeesDeptComponent implements OnInit {
   data: DataService;
+  employees: Employee[];
 
   constructor(dataService: DataService) { 
     this.data = dataService;
+    this.employees = this.data.getEmployees();
+    
   }
 
   ngOnInit() {
+    
   }
 
 }
