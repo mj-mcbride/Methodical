@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 
+
 @Component({
   selector: 'methodical-add-employee',
   templateUrl: './add-employee.component.html',
@@ -12,6 +13,10 @@ export class AddEmployeeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmitEmployee(employee: Employee){
+
   }
 
 }
