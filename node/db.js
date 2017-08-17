@@ -31,3 +31,21 @@ exports.addEmployee = function (emp, callback){
             callback ('success');
         });
 };
+
+exports.addEmployee = function (emp, callback){
+    db.query(
+        "INSERT INTO Employee (forename, surname, street_number, street_name, city, NIN, bank_account, salary) VALUES (?, ?, ?, ?, ?, ?, ?, ?);",
+        [emp.forename, emp.surname, emp.street_number, emp.street_name, emp.city, emp.NIN, emp.bank_account, emp.salary],
+        function (err, rows) {
+            if(err) throw err;
+            callback ('success');
+        });
+
+    db.query(
+        "INSERT INTO Sales_Employee (sales_employee_id) VALUES (SELECT employee_id FROM Employee WHERE NIN = ?), ?);",
+        [emp.NIN, emp.commission],
+        function (err, rows) {
+            if(err) throw err;
+            callback ('success');
+        });
+};
