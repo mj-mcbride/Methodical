@@ -4,16 +4,26 @@ const db = require('./db.js');
 
 app.post('/new_employee', function (req, res) {
     console.log('Adding new employee.');
-    db.getEmployeesInDepartment(req.body, function (rows){
-        res.send(rows);
-    });
+    // db.addEmployee(req.body, function (rows){
+    //     res.send(rows);
+    // });
+    res.send('worked new emp');
+});
+
+app.post('/new_sales_employee', function (req, res) {
+    console.log('Adding new sales employee.');
+    // db.getEmployeesInDepartment(req.body, function (rows){
+    //     res.send(rows);
+    // });
+    res.send('worked new sales');
 });
 
 app.get('/employees/dept', function (req, res) {
     console.log('Getting list of employees by dept.');
-    db.getEmployeesInDepartment(req.body.deptName, function (rows){
-        res.send(rows);
-    });
+    // db.getEmployeesInDepartment(req.body, function (rows){
+    //     res.send(rows);
+    // });
+    res.send('worked');
 });
 
 app.listen(8002, function () {
