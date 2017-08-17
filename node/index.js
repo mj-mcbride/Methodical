@@ -11,7 +11,7 @@ app.post('/new_employee', function (req, res) {
 
 app.get('/employees/dept', function (req, res) {
     console.log('Getting list of employees by dept.');
-    db.getEmployeesInDepartment(req.body.id, function (rows){
+    db.getEmployeesInDepartment(req.body.deptName, function (rows){
         res.send(rows);
     });
 });
