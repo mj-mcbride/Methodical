@@ -15,6 +15,7 @@ export class ViewEmployeesDeptComponent implements OnInit {
   constructor(dataService: DataService) { 
     this.data = dataService;
     this.employees = this.data.getEmployees();
+    console.log(this.employees);
     
   }
 

@@ -23,6 +23,7 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   onSubmitEmployee(employee: Employee){
+    console.log(employee.street_name);
     this.data.addEmployee(employee);
   }
 

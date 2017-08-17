@@ -7,11 +7,12 @@ import { Employee } from './employee.js';
 @Injectable()
 export class DataService {
   http;
-  employees: Employee[];
 
   //this.employees = this.http.get<Employee[]>('/api/employees/dept');
 
   constructor(http: HttpClient) { this.http = http;}
+
+  //employees = this.http.get('/api/employees/dept');
 
   addEmployee(emp: Employee): void{ 
     // surname_name varchar(50) NOT NULL,
@@ -31,6 +32,7 @@ export class DataService {
       bank_account: emp.bank_account,
       salary: emp.salary
     };
+    console.log(body.forename);
     const options = {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
