@@ -1,14 +1,30 @@
-CREATE database methodical;
+-- all the drops
+drop database if exists `methodical`;
+create database `methodical`;
+use `methodical`;
 
-USE methodical;
    
 DROP TABLE IF EXISTS Employee;
 DROP TABLE IF EXISTS Sales_Employee;
-DROP TABLE IF EXISTS Sales_per_Employee;
-DROP TABLE IF EXISTS Customer;
-DROP TABLE IF EXISTS Assignment;
+DROP TABLE IF EXISTS Sales;
 DROP TABLE IF EXISTS Department;
+DROP TABLE IF EXISTS Employee_Department;
+DROP TABLE IF EXISTS Project;
+DROP TABLE IF EXISTS Assignment;
 
+
+
+drop user if exists 'hr'@'%';
+drop user if exists 'finance'@'%';
+drop user if exists 'salesManager'@'%';
+drop user if exists 'talentManager'@'%';
+
+-- Create Users
+
+create user 'hr'@'%' identified by 'hr_Password';
+create user 'finance'@'%' identified by 'fn_Password';
+create user 'salesManager'@'%' identified by 'sm_Password';
+create user 'talentManager'@'%' identified by 'tm_Password';
 
 
 CREATE TABLE IF NOT EXISTS Employee( 
@@ -87,8 +103,6 @@ foreign key(project_leader_id) references
 
 foreign key(project_customer) references
 	Customer(customer_id)
-	
-
 );
 
 
@@ -106,6 +120,26 @@ foreign key(project_id) references
 primary key(assignment_id)
 );
 
+
+-- grant permis
+
+-- hr
+grant insert, select, update on Employee to 'hr'@'%';
+grant insert, select, update on Department to 'hr'@'%';
+grant insert, select, update on Sales_Employee to 'hr'@'%';
+
+-- finance
+grant select on Employee to 'finance'@'%';
+grant select on Sales_Employee to 'finance'@'%';
+
+-- salesManager
+grant select on Employee to 'salesManager'@'%';
+grant select on Sales_Employee to 'salesManager'@'%';
+
+-- talentManager
+grant insert, select, update on Assignment to 'talentManager'@'%';
+grant insert, select, update on Project to 'talentManager'@'%';
+grant select on Employee to 'talentManager'@'%';
 
 
 
