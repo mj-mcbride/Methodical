@@ -34,8 +34,6 @@ export class DataService {
 
     return this.http.post("/api/new_employee", body, options).subscribe();
   }
-<<<<<<< HEAD
-=======
 
   getEmployees(): void{ 
     // surname_name varchar(50) NOT NULL,
@@ -54,5 +52,4 @@ export class DataService {
 
     return this.http.post("/api/employees/dept", body, options).subscribe();
   }
->>>>>>> a2e14bc98e414ae75f08019d0df6d8d98b50cf3e
 }
