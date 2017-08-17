@@ -13,11 +13,11 @@ export class MenuComponent implements OnInit {
   }
 
   onClickViewDepartment(): void{
-    
+
   }
 
   onClickNewEmployee(): void {
-
+    
   }
 
 }

@@ -1,0 +1,82 @@
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    
+    <div class="panel panel-default">
+    
+    <div class="panel-heading">New Employee</div>
+    
+    <div class="panel-body">
+    
+    
+      <form method="POST">
+    
+        <!-- Forename -->
+          <div class="form-group">
+              <label for="txtForename">Forename</label>
+              <input class="form-control" [(ngModel)]="employee.forename" name="txtForename" placeholder="Forename">
+            </div>
+    
+            <!-- Surname -->
+          <div class="form-group">
+              <label for="txtSurname">Surname</label>
+              <input class="form-control" [(ngModel)]="employee.surname" name="txtSurname" placeholder="Surname">
+            </div>
+    
+            <!-- Street Number -->
+          <div class="form-group">
+              <label for="txtStreetNo">House Number</label>
+              <input class="form-control" [(ngModel)]="employee.street_number" name="txtStreetNo" placeholder="House Number">
+            </div>
+    
+            <!-- Street -->
+          <div class="form-group">
+              <label for="txtStreetName">Street</label>
+              <input class="form-control" [(ngModel)]="employee.street_name" name="txtStretName" placeholder="Street">
+            </div>
+    
+            <!-- City -->
+          <div class="form-group">
+              <label for="txtCity">City</label>
+              <input class="form-control" [(ngModel)]="employee.city" name="txtCity" placeholder="City">
+            </div>
+    
+            <!-- NIN -->
+          <div class="form-group">
+              <label for="txtNIN">National Insurance No.</label>
+              <input class="form-control" [(ngModel)]="employee.NIN" name="txtNIN" placeholder="National Insurance No.">
+            </div>
+    
+            <!-- Bank Account -->
+          <div class="form-group">
+              <label for="txtBankAccount">Bank Account No.</label>
+              <input class="form-control" [(ngModel)]="employee.bank_account" name="txtBankAccount" placeholder="Bank Account No.">
+            </div>
+    
+            <!-- Salary -->
+          <div class="form-group">
+              <label for="txtSalary">Salary</label>
+              <input class="form-control" [(ngModel)]="employee.salary" name="txtSalary" placeholder="Salary">
+            </div>
+
+
+            <div class="form-group">
+                <label for="txtCommission">Commission</label>
+                <input class="form-control" [(ngModel)]="employee.commission" name="txtCommission" placeholder="Commission">
+              </div>
+
+            
+    
+            
+      </form>
+    
+    
+    </div>
+    
+    <div class="panel-footer">
+        <button type="submit" (click)="onSubmitEmployee(employee)" class="btn btn-success">Save</button>
+        
+    
+    </div>
+    
+    </div>
+    </div>

@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewEmployeesDeptComponent } from './view-employees-dept/view-employees-dept.component';
 
 import { FormsModule } from '@angular/forms';
+import { AddSalesEmployeeComponent } from './add-sales-employee/add-sales-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     AddEmployeeComponent,
-    ViewEmployeesDeptComponent
+    ViewEmployeesDeptComponent,
+    AddSalesEmployeeComponent
   ],
   imports: [
     BrowserModule,
