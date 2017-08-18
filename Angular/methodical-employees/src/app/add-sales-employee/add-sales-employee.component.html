@@ -3,9 +3,18 @@
     
     <div class="panel panel-default">
     
-    <div class="panel-heading">New Employee</div>
+    <div class="panel-heading">New Sales Employee</div>
     
     <div class="panel-body">
+
+        <div [hidden]="!showSuccess" class="alert alert-success" role="alert">User added successfully!
+            
+            
+                    <button type="button" class="close" data-dismiss="alert" (click)="showSuccess=false"aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+            
+                </div>
     
     
       <form method="POST">

@@ -12,10 +12,12 @@ import { DataService } from '../data.service';
 export class AddEmployeeComponent implements OnInit {
   employee: Employee;
   data: DataService;
+  showSuccess: boolean;
 
   constructor(dataService: DataService) { 
     this.employee = new Employee;
     this.data = dataService;
+    this.showSuccess = false;
 
   }
 
@@ -25,6 +27,8 @@ export class AddEmployeeComponent implements OnInit {
   onSubmitEmployee(employee: Employee){
     console.log(employee.street_name);
     this.data.addEmployee(employee);
+this.showSuccess = true;
+
   }
 
 }

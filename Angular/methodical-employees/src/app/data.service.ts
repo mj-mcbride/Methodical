@@ -53,7 +53,7 @@ export class DataService {
       NIN: emp.NIN,
       bank_account: emp.bank_account,
       salary: emp.salary,
-      commission: emp.commission
+      commission_rate: emp.commission
     };
     console.log(body.forename);
     const options = {

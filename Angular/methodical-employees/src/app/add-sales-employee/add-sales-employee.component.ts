@@ -12,10 +12,12 @@ export class AddSalesEmployeeComponent implements OnInit {
 
   employee: SalesEmployee;
   data: DataService;
+  showSuccess: boolean;
 
   constructor(dataService: DataService) { 
     this.employee = new SalesEmployee;
     this.data = dataService;
+    this.showSuccess = false;
 
   }
 
@@ -25,5 +27,6 @@ export class AddSalesEmployeeComponent implements OnInit {
   onSubmitEmployee(employee: SalesEmployee){
     console.log(employee.street_name);
     this.data.addSalesEmployee(employee);
+    this.showSuccess = true;
   }
 }

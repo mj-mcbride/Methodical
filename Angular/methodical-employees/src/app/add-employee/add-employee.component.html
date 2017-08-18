@@ -6,13 +6,22 @@
 
 <div class="panel-body">
 
+    <div [hidden]="!showSuccess" class="alert alert-success" role="alert">User added successfully!
+
+
+        <button type="button" class="close" data-dismiss="alert" (click)="showSuccess=false"aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+
 
   <form method="POST">
 
     <!-- Forename -->
       <div class="form-group">
           <label for="txtForename">Forename</label>
-          <input class="form-control" [(ngModel)]="employee.forename" name="txtForename" placeholder="Forename">
+          <input class="form-control" [(ngModel)]="employee.forename" name="txtForename" id="txtForename" placeholder="Forename">
         </div>
 
         <!-- Surname -->
