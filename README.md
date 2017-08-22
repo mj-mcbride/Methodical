@@ -3,17 +3,18 @@ This project was created during week 3 of the tdp training course. Using Angular
 
 ## Getting Started
 Clone the repo:
-
+```
 git clone https://github.com/mj-mcbride/Methodical.git
+```
 
-## Prerequisites
+### Prerequisites
 You must have:
 Angular
 Angular CLI
 Express.JS
 MySQL
 
-## Authors
+### Authors
 	•	Mary-Jane McBride
 	•	Dariusz Jerzewski
 	•	Jack Murphy
